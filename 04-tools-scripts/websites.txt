@@ -1,0 +1,9 @@
+https://www.virustotal.com/
+https://attack.mitre.org/
+https://app.any.run
+https://user-agents.net/
+https://malshare.com/
+https://bazaar.abuse.ch/
+https://tdm.socprime.com/signup
+https://ssdeep-project.github.io/ssdeep/index.html
+
