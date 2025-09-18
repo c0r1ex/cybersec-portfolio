@@ -1,0 +1,14 @@
+1. The attacker disabled LSA protection on the compromised host by modifying a registry key. What is the full path of that registry key?
+ANSWER: HKLM\SYSTEM\CurrentControlSet\Control\LSA
+
+2. Which PowerShell command did the attacker first execute to disable Windows Defender?
+ANSWER: Set-MpPreference -DisableIOAVProtection $true -DisableEmailScanning $true -DisableBlockAtFirstSeen $true
+
+3. The attacker loaded an AMSI patch written in PowerShell. Which function in the DLL is being patched by the script to effectively disable AMSI?
+ANSWER: search for patters, 0x31 , 0xC0, 0xC3. This can take us to AmsiScanBuffer. Sometimes AmsiScanBuffer is obfuscated as "A" + "m" + "s" + "i" + "S" + "c" + "a" + "n" + "B" + "u" + "f" + "f" + "e" + "r"
+
+4. Which command did the attacker use to restart the machine in Safe Mode?
+ANSWER: bcdedit.exe /set safeboot network
+
+5. Which PowerShell command did the attacker use to disable PowerShell command history logging?
+ANSWER: Using "history" in filter, found the command: Set-PSReadlineOption -HistorySaveStyle SaveNothing

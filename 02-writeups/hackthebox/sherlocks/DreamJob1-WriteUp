@@ -1,0 +1,48 @@
+Who conducted Operation Dream Job?
+ANSWER: Lazarus Group
+
+When was this operation first observed?
+ANSWER: September 2019
+
+There are 2 campaigns associated with Operation Dream Job. One is Operation North Star, what is the other?
+ANSWER: Operation Interception 
+
+During Operation Dream Job, there were the two system binaries used for proxy execution. One was Regsvr32, what was the other?
+ANSWER: Rundll32
+
+What lateral movement technique did the adversary use?
+ANSWER: Internal Spearphishing
+
+What is the technique ID for the previous answer?
+ANSWER: T1534
+
+What Remote Access Trojan did the Lazarus Group use in Operation Dream Job?
+ANSWER: DRATzarus
+
+What technique did the malware use for execution?
+ANSWER: Native API 
+
+
+What technique did the malware use to avoid detection in a sandbox?
+ANSWER: Time Based Evasion
+
+
+To answer the remaining questions, utilize VirusTotal and refer to the IOCs.txt file. What is the name associated with the first hash provided in the IOC file?
+ANSWER: IEXPLORE.EXE
+
+
+When was the file associated with the second hash in the IOC first created?
+ANSWER: 2020-05-12 19:26:17 UTC 
+
+
+What is the name of the parent execution file associated with the second hash in the IOC?
+ANSWER: BAE_HPC_SE.iso
+
+
+Examine the third hash provided. What is the file name likely used in the campaign that aligns with the adversary's known tactics?
+ANSWER: Salary_Lockheed_Martin_job_opportunities_confidential.doc
+
+
+Which URL was contacted on 2022-08-03 by the file associated with the third hash in the IOC file?
+ANSWER: https://markettrendingcenter.com/lk_job_oppor.docx 
+

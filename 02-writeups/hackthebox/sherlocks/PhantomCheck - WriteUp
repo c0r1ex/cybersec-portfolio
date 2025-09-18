@@ -1,0 +1,27 @@
+ANALYZING FILE USING KALI LINUX
+
+Talion suspects that the threat actor carried out anti-virtualization checks to avoid detection in sandboxed environments. Your task is to analyze the event logs and identify the specific techniques used for virtualization detection. Byte Doctor requires evidence of the registry checks or processes the attacker executed to perform these checks.
+
+
+
+CONVERTED Microsoft-Windows-Powershell.evtx to XML
+
+Opened output.xml with Nano
+
+1. Which WMI class did the attacker use to retrieve model and manufacturer information for virtualization detection?
+	Answer: Using nano search (Where Is) filtered the word 'wmi' and found Win32_ComputerSystem
+	
+2. Which WMI query did the attacker execute to retrieve the current temperature value of the machine?
+	Answer: Same as before, keep looking, SELECT * FROM MSAcpi_ThermalZoneTemperature
+	
+3. The attacker loaded a PowerShell script to detect virtualization. What is the function name of the script?
+	Answer: Analyzing Windows-PowerShell-Operational.evtx, detected that the function name is Check-VM
+	
+4. Which registry key did the above script query to retrieve service details for virtualization detection?
+	Answer:  HKLM:\SYSTEM\ControlSet001\Services
+	
+5. The VM detection script can also identify VirtualBox. Which processes is it comparing to determine if the system is running VirtualBox?
+	Answer: vboxservice.exe, vboxtray.exe
+
+6. The VM detection script prints any detection with the prefix 'This is a'. Which two virtualization platforms did the script detect?
+	Answer: Hyper-V, Vmware
