@@ -263,7 +263,7 @@ cd /root
 cat root.txt
 ```
 
-**Root flag:** `63dd5727640d7d9eaf743b157f21afc3`
+**Root flag:** `*************************`
 
 ---
 
