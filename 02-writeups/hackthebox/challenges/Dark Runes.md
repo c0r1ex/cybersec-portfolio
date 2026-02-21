@@ -459,7 +459,7 @@ open flag.pdf
 xdg-open flag.pdf
 ```
 
-4. **Flag Retrieved:** `HTB{F0rs33_3num3r3t3_F!nd_3XplOit}`
+4. **Flag Retrieved:** `HTB{*******************}`
 
 ---
 
@@ -1076,4 +1076,4 @@ Key takeaways:
 **Author:** HTB Player  
 **Date:** February 2026  
 **Challenge:** Dark Runes  
-**Flag:** `HTB{F0rs33_3num3r3t3_F!nd_3XplOit}`
+**Flag:** `HTB{**************************}`
