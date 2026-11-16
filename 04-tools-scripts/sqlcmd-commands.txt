@@ -1,0 +1,22 @@
+🔌 Connection & Authentication
+-S (Server): Specifies the SQL Server instance to connect to (IP address or hostname). Required when connecting remotely .
+
+-U (User): Specifies the login name (e.g., db_admin).
+
+-P (Password): Specifies the password (e.g., B1@hx31234567890). If omitted, it will prompt you to enter it securely .
+
+-d (Database): Directly specifies the database to connect to upon login (e.g., streamio_backup).
+
+📝 Query Execution
+-Q (Query and Exit): Executes the specified SQL statement and then exits sqlcmd. Suitable for single commands.
+
+-q (Query): Executes the SQL statement but stays in the interactive shell after execution.
+
+-i (Input File): Executes a .sql script file. Mutually exclusive with -Q/-q .
+
+📤 Output Control
+-o (Output File): Saves query results to a specified file instead of displaying them on the screen .
+
+-h (Headers): Controls the number of rows for column headers. -1 means no headers, 0 means no headers at all.
+
+-W (Remove Trailing Spaces): Removes trailing spaces from each column, making output cleaner.
